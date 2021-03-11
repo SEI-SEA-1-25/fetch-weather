@@ -11,11 +11,11 @@ Let's use our new-found react skills to create a weather app!
 
 **Resources**:
 
-- [OpenWeather API](http://openweathermap.org/current)
+* [OpenWeather API](http://openweathermap.org/current)
 
-- [OpenWeather API Documentation](http://openweathermap.org/current)
+* [OpenWeather API Documentation](http://openweathermap.org/current)
 
-- [Info on `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
+* [Info on `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
 
 Time to show off! You're going to display the weather on your app.
 
@@ -24,7 +24,6 @@ You'll use the OpenWeather API to fetch weather information from a certain zip c
 ## Solution
 
 At the end of this exercise, your solution will look something like what's shown here.
-
 
 <img src="https://res.cloudinary.com/briezh/image/upload/v1556235234/weather_gi72z2.png" class="responsive" />
 
@@ -36,17 +35,17 @@ Make a new component called `Weather`.
 
 On your `Weather` page, ask the user to input a zip code.
 
-- You can learn more about forms [here](https://facebook.github.io/react/docs/forms.html).
-  - When this event fires, take the `event.target.value` and `fetch()` from the OpenWeather API.
+* You can learn more about forms [here](https://facebook.github.io/react/docs/forms.html).
+  * When this event fires, take the `event.target.value` and `fetch()` from the OpenWeather API.
 
-- Use the response from the API to display the current temperature, the high and low temperatures, the current weather description, and the name of the city.
-  - Note: Our solution uses Fahrenheit. You're free to use Celsius or Kelvins if you'd like.
+* Use the response from the API to display the current temperature, the high and low temperatures, the current weather description, and the name of the city.
+  * Note: Our solution uses Fahrenheit. You're free to use Celsius or Kelvins if you'd like.
 
 **Important Notes**:
 
-- Because the OpenWeather API is not an open API, every request must end with this API key:  `&appid=052f26926ae9784c2d677ca7bc5dec98`.
+* Because the OpenWeather API is not an open API, every request must end with this API key:  `&appid=052f26926ae9784c2d677ca7bc5dec98`.
 
-- As an example, this is a URL to which you might send a `fetch()` request: `http://api.openweathermap.org/data/2.5/weather?zip=60614,us&appid=052f26926ae9784c2d677ca7bc5dec98`.
+* As an example, this is a URL to which you might send a `fetch()` request: `http://api.openweathermap.org/data/2.5/weather?zip=60614,us&appid=052f26926ae9784c2d677ca7bc5dec98`.
 
 ### Skeleton Code (Starter)
 
@@ -95,11 +94,10 @@ class Weather extends Component {
 export default Weather;
 ```
 
-
 **Need a Hint or Two?**
 
 <details>
-    <summary>Hint 1</summary> 
+    <summary>Hint 1</summary>
     <br />
     You'll only need to create and implement the `Weather` component.
 </details>
