@@ -19,7 +19,7 @@ class Weather extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     // Your fetch call here
-    let url = `http://api.openweathermap.org/data/2.5/weather?zip=${this.state.zipcode},us&appid=052f26926ae9784c2d677ca7bc5dec98&units=imperial`;
+    let url = `http://api.openweathermap.org/data/2.5/weather?zip=${this.state.zipcode},us&appid=75368d6b1d2ac84a89a42ae13988cbfc&units=imperial`;
     // Your state updates go under function(json)
     const response = await fetch(url);
     const json = await response.json();
@@ -41,15 +41,14 @@ class Weather extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="zipcode">
-            Please enter your zip code for the weather:
-          </label>
+          <label htmlFor="zipcode"></label>
           <br />
           <input
             id="zipcode"
             type="text"
             value={this.state.zipcode}
             onChange={this.handleChange}
+            placeholder={"zip code"}
           />
           <input type="submit" value="Get my forecast!" />
         </form>
