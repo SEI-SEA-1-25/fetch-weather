@@ -1,4 +1,5 @@
 import { Component } from "react";
+import GoogleMap from "../google-map/GoogleMap";
 
 class Weather extends Component {
   state = {
@@ -41,6 +42,7 @@ class Weather extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <GoogleMap />
           <label htmlFor="zipcode"></label>
           <br />
           <input

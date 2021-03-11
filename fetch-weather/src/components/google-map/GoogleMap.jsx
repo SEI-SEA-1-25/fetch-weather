@@ -1,8 +1,6 @@
 import { Component, useEffect, useRef } from "react";
 
 
-/* ********* GOOGLE MAPS API  */
-
 class GoogleMap extends({ placeName }) {
   googleMapRef = useRef();
   googleMap;
@@ -16,7 +14,7 @@ class GoogleMap extends({ placeName }) {
     });
   /*}, [];*/
 
-  const createGoogleMap = (coordinates) => {
+  createGoogleMap = (coordinates) => {
     googleMap = new window.google.maps.Map(googleMapRef.current, {
       zoom: 16,
       center: {
@@ -51,15 +49,13 @@ class GoogleMap extends({ placeName }) {
     );
   };
   return (
-    <div
-      id="google-map"
-      ref={googleMapRef}
-      style={{ width: "400px", height: "300px" }}
-    />
+    <div>
+      <div id="google-map" ref={googleMapRef} style={{ width: "400px", height: "300px" }} >
+        <input type="submit" value="detect location"></input>
+      </div>
+    </div>
   );
 }
 
 
-
 export default GoogleMap;
-/* you can add at the end of the src &language=en to be only English without this it will be localized. */
