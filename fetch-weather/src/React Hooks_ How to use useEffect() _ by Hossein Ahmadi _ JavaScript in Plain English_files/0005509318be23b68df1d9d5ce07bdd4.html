@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://javascript.plainenglish.io/media/0005509318be23b68df1d9d5ce07bdd4 -->
+<html><link type="text/css" id="dark-mode" rel="stylesheet" href="https://javascript.plainenglish.io/media/0005509318be23b68df1d9d5ce07bdd4"><style type="text/css" id="dark-mode-custom-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Country List func – Medium</title><meta name="description" content="Country List func. GitHub Gist: instantly share code, notes, and snippets."><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./d95ecd5a399cf67b3fc6035daba277cb.js" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-4e64bbf96c31ed6c9ee61f08cea01836.css"><div id="gist97124600" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-countrylist-js" class="file my-2">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-countrylist-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-countrylist-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-v">React</span><span class="pl-kos">,</span><span class="pl-kos">{</span><span class="pl-s1">useEffect</span><span class="pl-kos">,</span><span class="pl-s1">useState</span><span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'react'</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-countrylist-js-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-countrylist-js-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">export</span> <span class="pl-k">const</span> <span class="pl-v">CountryList</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-countrylist-js-LC4" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">const</span> <span class="pl-kos">[</span><span class="pl-s1">countries</span><span class="pl-kos">,</span> <span class="pl-s1">setCountries</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-en">useState</span><span class="pl-kos">(</span><span class="pl-kos">[</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-countrylist-js-LC5" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">const</span> <span class="pl-kos">[</span><span class="pl-s1">load</span><span class="pl-kos">,</span> <span class="pl-s1">setLoad</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-en">useState</span><span class="pl-kos">(</span><span class="pl-c1">false</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-countrylist-js-LC6" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">const</span> <span class="pl-kos">[</span><span class="pl-s1">error</span><span class="pl-kos">,</span> <span class="pl-s1">setError</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-en">useState</span><span class="pl-kos">(</span><span class="pl-s">''</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-countrylist-js-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-countrylist-js-LC8" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">useEffect</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-countrylist-js-LC9" class="blob-code blob-code-inner js-file-line">        <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'https://restcountries.eu/rest/v2/all'</span><span class="pl-kos">)</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-countrylist-js-LC10" class="blob-code blob-code-inner js-file-line">            <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">res</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-countrylist-js-LC11" class="blob-code blob-code-inner js-file-line">                <span class="pl-s1">setCountries</span><span class="pl-kos">(</span><span class="pl-s1">res</span><span class="pl-kos">.</span><span class="pl-c1">data</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-countrylist-js-LC12" class="blob-code blob-code-inner js-file-line">                <span class="pl-s1">setLoad</span><span class="pl-kos">(</span><span class="pl-c1">true</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-countrylist-js-LC13" class="blob-code blob-code-inner js-file-line">            <span class="pl-kos">}</span><span class="pl-kos">)</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-countrylist-js-LC14" class="blob-code blob-code-inner js-file-line">            <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-s1">err</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-countrylist-js-LC15" class="blob-code blob-code-inner js-file-line">                <span class="pl-s1">setError</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-countrylist-js-LC16" class="blob-code blob-code-inner js-file-line">                <span class="pl-s1">setLoad</span><span class="pl-kos">(</span><span class="pl-c1">true</span><span class="pl-kos">)</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-countrylist-js-LC17" class="blob-code blob-code-inner js-file-line">            <span class="pl-kos">}</span><span class="pl-kos">)</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-countrylist-js-LC18" class="blob-code blob-code-inner js-file-line">    <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-countrylist-js-LC19" class="blob-code blob-code-inner js-file-line">    </td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-countrylist-js-LC20" class="blob-code blob-code-inner js-file-line">    </td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-countrylist-js-LC21" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">load</span><span class="pl-kos">)</span> <span class="pl-kos">{</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-countrylist-js-LC22" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> <span class="pl-kos">(</span><span class="pl-c1">&lt;</span><span class="pl-ent">ul</span><span class="pl-c1">&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-countrylist-js-LC23" class="blob-code blob-code-inner js-file-line">            <span class="pl-kos">{</span><span class="pl-s1">error</span> ? <span class="pl-c1">&lt;</span><span class="pl-ent">li</span><span class="pl-c1">&gt;</span><span class="pl-kos">{</span><span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">}</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-ent">li</span><span class="pl-c1">&gt;</span> : <span class="pl-s1">countries</span><span class="pl-kos">.</span><span class="pl-en">map</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-s1">country</span><span class="pl-kos">,</span> <span class="pl-s1">index</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-c1">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">key</span><span class="pl-c1">=</span><span class="pl-kos">{</span><span class="pl-s1">index</span><span class="pl-kos">}</span><span class="pl-c1">&gt;</span><span class="pl-kos">{</span><span class="pl-s1">country</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">}</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-ent">li</span><span class="pl-c1">&gt;</span><span class="pl-kos">)</span><span class="pl-kos">}</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-countrylist-js-LC24" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-ent">ul</span><span class="pl-c1">&gt;</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-countrylist-js-LC25" class="blob-code blob-code-inner js-file-line">    <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-countrylist-js-LC26" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> <span class="pl-kos">(</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-countrylist-js-LC27" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">&lt;</span><span class="pl-ent">div</span><span class="pl-c1">&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-countrylist-js-LC28" class="blob-code blob-code-inner js-file-line">                Loading...</td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-countrylist-js-LC29" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-ent">div</span><span class="pl-c1">&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-countrylist-js-LC30" class="blob-code blob-code-inner js-file-line">        <span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-countrylist-js-LC31" class="blob-code blob-code-inner js-file-line">    <span class="pl-kos">}</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrylist-js-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-countrylist-js-LC32" class="blob-code blob-code-inner js-file-line"><span class="pl-kos">}</span><span class="pl-kos">;</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/hosseinAMD/d95ecd5a399cf67b3fc6035daba277cb/raw/a3cb49a89b00619eedb596aff6173765cc6d41f8/CountryList.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/hosseinAMD/d95ecd5a399cf67b3fc6035daba277cb#file-countrylist-js">CountryList.js</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200; if (document) {document.domain = document.domain;}function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height);var elements = document.getElementsByClassName("gist-data"); for (var i = 0; i < elements.length; i++) {elements[i].style.overflow = "visible"}resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {try {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);} catch(error) {console.log('maybeResize error: ', error)}}maybeResize();</script></body></html>
